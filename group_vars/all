@@ -1,0 +1,19 @@
+packages:
+  - wget
+  - unzip
+  - zsh
+  - git
+  - python
+  # - python-devel
+  - neovim
+  - tree
+  - ruby
+  - ansible
+  - tmux
+
+dotfiles:
+  - .gitconfig
+  - .tmux.conf
+  - .vimrc
+  - .zshrc
+

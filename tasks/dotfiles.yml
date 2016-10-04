@@ -1,0 +1,27 @@
+---
+- name: Clone dotfiles
+  become_user: vagrant
+  git:
+    repo: 'https://github.com/berryp/dotfiles.git'
+    dest: '{{ home }}/.dotfiles'
+
+- name: Link dotfiles
+  become_user: vagrant
+  file:
+    src: '{{ home }}/.dotfiles/{{ item }}'
+    dest: '{{ item }}'
+    state: link
+  with_items: '{{ hostvars[inventory_hostname]["dotfiles"] }}'
+
+- name: Create nvim config directory
+  become_user: vagrant
+  file:
+    path: '{{ home }}/.config/nvim'
+    state: directory
+
+- name: Link nvim config
+  become_user: vagrant
+  file:
+    src: '{{ home }}/.dotfiles/.vimrc'
+    dest: '{{ home }}/.config/nvim/init.vim'
+    state: link

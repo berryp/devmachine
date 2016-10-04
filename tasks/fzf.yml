@@ -1,0 +1,11 @@
+---
+
+- name: Clone FZF
+  become_user: vagrant
+  git:
+    repo: 'https://github.com/junegunn/fzf.git'
+    dest: '{{ home }}/.fzf'
+
+- name: Install FZF
+  become_user: vagrant
+  shell: '{{ home }}/.fzf/install'
