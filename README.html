@@ -1,0 +1,20 @@
+<h1 id="provision-development-machine-wip-">Provision development machine [WIP]</h1>
+<h2 id="installation">Installation</h2>
+<ul>
+<li><p>Install VirtualBox:</p>
+<p><code>https://www.virtualbox.org/</code></p>
+</li>
+<li><p>Install Vagrant:</p>
+<p><code>https://www.vagrantup.com/</code></p>
+</li>
+<li><p>Install guest additions:</p>
+<p><code>$ vagrant plugin install vagrant-vbguest</code></p>
+</li>
+<li><p>Create and provision the box:</p>
+<p><code>$ vagrant up --provider virtualbox &amp;&amp; vagrant provision</code></p>
+</li>
+<li><p>SSH into the box:</p>
+<p><code>$ vagrant ssh</code></p>
+</li>
+</ul>
+
