@@ -33,6 +33,7 @@
     - name: Set shell to ZSH
       shell: chsh -s /bin/zsh vagrant
 
+    - include: ../tasks/tmux.yml
     - include: ../tasks/terraform.yml
 
     # - name: Install Python packages

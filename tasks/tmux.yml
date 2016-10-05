@@ -1,0 +1,17 @@
+- name: Install tmux dependencies
+  yum:
+    name: '{{ item }}'
+    state: latest
+  with_items:
+    - automake
+    - libevent
+    - libevent-devel
+    - ncurses-devel
+
+- name: Clone tmux
+  git:
+    repo: https://github.com/tmux/tmux.git
+    dest: /tmp/tmux
+
+- name: Install tmux
+  script: ../scripts/install_tmux.sh /tmp/tmux

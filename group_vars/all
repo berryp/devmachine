@@ -9,7 +9,10 @@ packages:
   - tree
   - ruby
   - ansible
-  - tmux
+  - automake
+  - libevent
+  - libevent-devel
+  - ncurses-devel
 
 dotfiles:
   - .gitconfig
